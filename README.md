@@ -4,17 +4,7 @@ A modern, minimalist portfolio website showcasing AI/ML engineering skills with 
 
 ## 🚀 Quick Start
 
-### Option 1: Docker (Recommended)
-```bash
-# Build and run with Docker Compose
-docker-compose up --build
-
-# Or build and run manually
-docker build -t portfolio .
-docker run -p 3000:80 portfolio
-```
-
-### Option 2: Local Development
+### Local Development
 ```bash
 # Install dependencies
 npm install
@@ -24,48 +14,21 @@ npm run dev
 
 # Build for production
 npm run build
-```
 
-### Option 3: Node.js Production Server
-```bash
-# Install dependencies (including Express)
-npm install
-
-# Build and start the production server
+# Start production server
 npm start
+```
 
-# Or build and serve separately
+### Netlify Deployment (Live)
+```bash
+# Build for Netlify deployment
 npm run build
-npm run serve
+
+# Deploy to Netlify
+# Go to https://app.netlify.com and import this repository
 ```
 
-Your portfolio will be available at: http://localhost:3000
-
-## 🐳 Docker Deployment
-
-### Using Docker Compose (Easiest)
-```bash
-docker-compose up --build
-```
-Your portfolio will be available at: http://localhost:3000
-
-### Using Docker Only
-```bash
-# Build the image
-docker build -t ai-ml-portfolio .
-
-# Run the container
-docker run -p 3000:80 ai-ml-portfolio
-```
-
-### Production Deployment
-```bash
-# Build for production
-docker build -t ai-ml-portfolio .
-
-# Run in production mode
-docker run -d -p 80:80 --name portfolio-container ai-ml-portfolio
-```
+Your portfolio will be available at: **https://portfolioshanks.netlify.app**
 
 ## 🎨 Features
 
@@ -81,7 +44,7 @@ docker run -d -p 80:80 --name portfolio-container ai-ml-portfolio
 - **Frontend**: React 18, TypeScript, Tailwind CSS
 - **Animations**: Framer Motion
 - **Build Tool**: Vite
-- **Deployment**: Docker + Nginx
+- **Deployment**: Netlify
 - **Icons**: Lucide React
 
 ## 📱 Sections
@@ -95,8 +58,8 @@ docker run -d -p 80:80 --name portfolio-container ai-ml-portfolio
 
 ## 🌐 Live Demo
 
-- **Local**: http://localhost:3000
-- **Docker**: http://localhost:3000
+- **Production**: https://portfolioshanks.netlify.app
+- **Local**: http://localhost:3000 (when running `npm run dev`)
 
 ## 📝 License
 
