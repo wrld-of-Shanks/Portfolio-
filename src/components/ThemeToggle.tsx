@@ -6,13 +6,9 @@ export function ThemeToggle() {
   const { theme, toggleTheme, mounted } = useTheme();
   const isDark = theme === 'dark';
 
-  // Don't render until theme is properly initialized to prevent hydration mismatch
+  // Don't render until theme context is properly initialized
   if (!mounted) {
-    return (
-      <button className="p-2 rounded-full bg-gray-800 text-gray-300">
-        <Moon className="w-5 h-5" />
-      </button>
-    );
+    return null;
   }
 
   return (

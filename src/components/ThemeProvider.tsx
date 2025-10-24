@@ -13,7 +13,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    // Return default values during initial render or when context is not available
+    return {
+      theme: 'dark' as Theme,
+      toggleTheme: () => {},
+      mounted: false
+    };
   }
   return context;
 }
@@ -57,7 +62,23 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   // Don't render until theme is properly initialized to prevent hydration mismatch
   if (!mounted) {
-    return <div className="min-h-screen bg-black">{children}</div>;
+    return (
+      <ThemeContext.Provider value={{
+        theme: 'dark' as Theme,
+        toggleTheme: () => {},
+        mounted: false
+      }}>
+        <div className="min-h-screen bg-black text-white">
+          {/* Loading state - simple theme toggle placeholder */}
+          <div className="fixed top-4 right-4 z-50">
+            <button className="p-2 rounded-full bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors">
+              <div className="w-5 h-5" />
+            </button>
+          </div>
+          {children}
+        </div>
+      </ThemeContext.Provider>
+    );
   }
 
   return (
