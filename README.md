@@ -26,6 +26,21 @@ npm run dev
 npm run build
 ```
 
+### Option 3: Node.js Production Server
+```bash
+# Install dependencies (including Express)
+npm install
+
+# Build and start the production server
+npm start
+
+# Or build and serve separately
+npm run build
+npm run serve
+```
+
+Your portfolio will be available at: http://localhost:3000
+
 ## 🐳 Docker Deployment
 
 ### Using Docker Compose (Easiest)
