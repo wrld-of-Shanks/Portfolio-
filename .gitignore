@@ -46,3 +46,6 @@ coverage/
 
 # OS generated files
 Thumbs.db
+
+# Docker
+.docker/
