@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "docker:build": "docker build -t ai-ml-portfolio .",
-    "docker:run": "docker run -p 3000:80 ai-ml-portfolio",
+    "docker:run": "docker run -p 3000:3000 ai-ml-portfolio",
     "docker:up": "docker-compose up --build",
     "docker:down": "docker-compose down"
   },
